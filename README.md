@@ -1,6 +1,6 @@
 # NAME
 
-Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation
+Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation for Mojolicious
 
 # SYNOPSIS
 

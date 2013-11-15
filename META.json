@@ -1,5 +1,5 @@
 {
-   "abstract" : "Http-Basic-Authentication implementation",
+   "abstract" : "Http-Basic-Authentication implementation for Mojolicious",
    "author" : [
       "Patrick Gr\u00e4mer, L<http://graemer.org>."
    ],
@@ -36,16 +36,21 @@
       },
       "runtime" : {
          "requires" : {
+            "Mojolicious" : "0",
             "perl" : "5.008005"
          }
       },
       "test" : {
          "requires" : {
+            "Test::Mojo" : "0",
             "Test::More" : "0.88"
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.03"
+   "version" : "0.04",
+   "x_contributors" : [
+      "Patrick Gr\u00e4mer <mail@graemer.org>"
+   ]
 }
 

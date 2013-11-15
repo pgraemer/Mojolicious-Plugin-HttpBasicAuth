@@ -4,7 +4,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::ByteStream;
 use Mojo::Util qw{b64_encode b64_decode};
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 sub register {
     my ($plugin, $app, $user_defaults) = @_;
@@ -87,7 +87,7 @@ __END__
 
 =head1 NAME
 
-Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation
+Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation for Mojolicious
 
 =head1 SYNOPSIS
 
