@@ -29,7 +29,7 @@ Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation fo
 
 # DESCRIPTION
 
-[Mojolicious::Plugin::HttpBasicAuth](https://metacpan.org/pod/Mojolicious::Plugin::HttpBasicAuth) is a implemntation of the Http-Basic-Authentication
+[Mojolicious::Plugin::HttpBasicAuth](https://metacpan.org/pod/Mojolicious::Plugin::HttpBasicAuth) is a implementation of the Http-Basic-Authentication
 
 # OPTIONS
 
@@ -76,7 +76,7 @@ Callback vor invalid requests, default can be seen here. Return values are dispa
 
 ## basic\_auth
 
-    return unless $self->basic_auth({realm => 'Marges Kitchen'});
+    return unless $self->basic_auth({realm => 'Kitchen'});
 
 All default options can be overwritten in every call.
 
@@ -88,7 +88,9 @@ All default options can be overwritten in every call.
 ## register
 
     my $route = $plugin->register(Mojolicious->new);
-    my $route = $plugin->register(Mojolicious->new, {realm => 'Fort Knox'});
+    my $route = $plugin->register(Mojolicious->new, {realm => 'Fort Knox', validate => sub {
+        return 0;
+    }});
 
 Register renderer and helper in [Mojolicious](https://metacpan.org/pod/Mojolicious) application.
 
@@ -98,4 +100,4 @@ Register renderer and helper in [Mojolicious](https://metacpan.org/pod/Mojolicio
 
 # AUTHOR
 
-Patrick Grämer, [http://graemer.org](http://graemer.org).
+Patrick Grämer, <pgraemer@cpan.org>, [http://graemer.org](http://graemer.org).

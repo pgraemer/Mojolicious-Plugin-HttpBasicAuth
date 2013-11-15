@@ -4,7 +4,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::ByteStream;
 use Mojo::Util qw{b64_encode b64_decode};
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 sub register {
     my ($plugin, $app, $user_defaults) = @_;
@@ -115,7 +115,7 @@ Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation fo
 
 =head1 DESCRIPTION
 
-L<Mojolicious::Plugin::HttpBasicAuth> is a implemntation of the Http-Basic-Authentication
+L<Mojolicious::Plugin::HttpBasicAuth> is a implementation of the Http-Basic-Authentication
 
 =head1 OPTIONS
 
@@ -162,7 +162,7 @@ L<Mojolicious::Plugin::HttpBasicAuth> implements the following helpers.
 
 =head2 basic_auth
 
-  return unless $self->basic_auth({realm => 'Marges Kitchen'});
+  return unless $self->basic_auth({realm => 'Kitchen'});
 
 All default options can be overwritten in every call.
 
@@ -174,7 +174,9 @@ L<Mojolicious::Plugin> and implements the following new ones.
 =head2 register
 
   my $route = $plugin->register(Mojolicious->new);
-  my $route = $plugin->register(Mojolicious->new, {realm => 'Fort Knox'});
+  my $route = $plugin->register(Mojolicious->new, {realm => 'Fort Knox', validate => sub {
+      return 0;
+  }});
 
 Register renderer and helper in L<Mojolicious> application.
 
@@ -184,6 +186,6 @@ L<Mojolicious>, L<Mojolicious::Guides>, L<http://mojolicio.us>.
 
 =head1 AUTHOR
 
-Patrick Grämer, L<http://graemer.org>.
+Patrick Grämer, E<lt>pgraemer@cpan.orgE<gt>, L<http://graemer.org>.
 
 =cut
