@@ -1,5 +1,5 @@
 #!perl
-use Mojo::Base-strict;
+use Mojo::Base -strict;
 
 use Test::More;
 use Mojolicious::Lite;

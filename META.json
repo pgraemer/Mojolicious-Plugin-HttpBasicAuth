@@ -36,12 +36,13 @@
       },
       "runtime" : {
          "requires" : {
-            "Mojolicious" : "0",
+            "Mojolicious" : "4.57",
             "perl" : "5.008005"
          }
       },
       "test" : {
          "requires" : {
+            "Mojolicious" : "4.57",
             "Test::Mojo" : "0",
             "Test::More" : "0.88"
          }
