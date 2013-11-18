@@ -17,3 +17,6 @@ Revision history for Mojolicious-Plugin-HttpBasicAuth
         
 0.06    2013-11-17
         Test Requirements fixed
+        
+0.07    2013-11-18
+        moved to github

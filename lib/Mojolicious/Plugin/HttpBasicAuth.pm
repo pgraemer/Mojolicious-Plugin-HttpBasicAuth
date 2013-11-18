@@ -4,7 +4,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::ByteStream;
 use Mojo::Util qw{b64_encode b64_decode};
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 sub register {
     my ($plugin, $app, $user_defaults) = @_;
