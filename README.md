@@ -24,6 +24,14 @@ Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation fo
         return unless $self->basic_auth(\%options);
         $self->render();
     }
+    
+    # or bridged
+    my $foo = $r->bridge('/bridge')->to(cb => sub {
+        my $self = shift;
+        # Authenticated
+        return unless $self->basic_auth({realm => 'Castle Bridge', validate => sub {return 1;}});
+    });
+    $foo->route('/bar')->to(controller => 'foo', action => 'bar');
 
 
 

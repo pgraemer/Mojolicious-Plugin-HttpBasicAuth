@@ -60,7 +60,7 @@
          "web" : "https://github.com/pgraemer/Mojolicious-Plugin-HttpBasicAuth"
       }
    },
-   "version" : "0.07",
+   "version" : "0.08",
    "x_contributors" : [
       "Patrick Gr\u00e4mer <mail@graemer.org>"
    ]
