@@ -4,7 +4,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::ByteStream;
 use Mojo::Util qw{b64_encode b64_decode};
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 sub register {
     my ($plugin, $app, $user_defaults) = @_;
@@ -111,6 +111,14 @@ Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation fo
       return unless $self->basic_auth(\%options);
       $self->render();
   }
+  
+  # or bridged
+  my $foo = $r->bridge('/bridge')->to(cb => sub {
+      my $self = shift;
+      # Authenticated
+      return unless $self->basic_auth({realm => 'Castle Bridge', validate => sub {return 1;}});
+  });
+  $foo->route('/bar')->to(controller => 'foo', action => 'bar');
 
 
 =head1 DESCRIPTION
