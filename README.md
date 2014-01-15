@@ -3,7 +3,7 @@
 Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation for Mojolicious
 
 # SYNOPSIS
-
+```perl
     # in your startup
     $self->plugin(
         'http_basic_auth', {
@@ -32,7 +32,7 @@ Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation fo
         return unless $self->basic_auth({realm => 'Castle Bridge', validate => sub {return 1;}});
     });
     $foo->route('/bar')->to(controller => 'foo', action => 'bar');
-
+```
 
 
 # DESCRIPTION
@@ -44,13 +44,13 @@ Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation fo
 [Mojolicious::Plugin::HttpBasicAuth](https://metacpan.org/pod/Mojolicious::Plugin::HttpBasicAuth) supports the following options.
 
 ## realm
-
+```perl
     $self->plugin('http_basic_auth', {realm => 'My Castle!'});
-
+```
 HTTP-Realm, defaults to 'WWW'
 
 ## validate
-
+```perl
     $self->plugin('http_basic_auth', {
         validate => sub {
               my $c          = shift;
@@ -60,11 +60,11 @@ HTTP-Realm, defaults to 'WWW'
               return 0;
         }
     });
-
+```
 Validation callback to verify user. This option is __mandatory__.
 
 ## invalid
-
+```perl
     $self->plugin('http_basic_auth', {
         invalid => sub {
             my $controller = shift;
@@ -75,7 +75,7 @@ Validation callback to verify user. This option is __mandatory__.
             );
         }
     });
-
+```
 Callback vor invalid requests, default can be seen here. Return values are dispatched to ["respond_to" in Mojolicious::Controller](https://metacpan.org/pod/Mojolicious::Controller#respond_to)
 
 # HELPERS
@@ -83,9 +83,9 @@ Callback vor invalid requests, default can be seen here. Return values are dispa
 [Mojolicious::Plugin::HttpBasicAuth](https://metacpan.org/pod/Mojolicious::Plugin::HttpBasicAuth) implements the following helpers.
 
 ## basic\_auth
-
+```perl
     return unless $self->basic_auth({realm => 'Kitchen'});
-
+```
 All default options can be overwritten in every call.
 
 # METHODS
@@ -94,12 +94,12 @@ All default options can be overwritten in every call.
 [Mojolicious::Plugin](https://metacpan.org/pod/Mojolicious::Plugin) and implements the following new ones.
 
 ## register
-
+```perl
     my $route = $plugin->register(Mojolicious->new);
     my $route = $plugin->register(Mojolicious->new, {realm => 'Fort Knox', validate => sub {
         return 0;
     }});
-
+```
 Register renderer and helper in [Mojolicious](https://metacpan.org/pod/Mojolicious) application.
 
 # SEE ALSO
@@ -108,4 +108,4 @@ Register renderer and helper in [Mojolicious](https://metacpan.org/pod/Mojolicio
 
 # AUTHOR
 
-Patrick Gr‰mer, <pgraemer@cpan.org>, [http://graemer.org](http://graemer.org).
+Patrick Gr√§mer, <pgraemer@cpan.org>, [http://graemer.org](http://graemer.org).
