@@ -4,7 +4,7 @@
       "Patrick Gr\u00e4mer, <pgraemer@cpan.org>, L<http://graemer.org>."
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Milla version v1.0.4, Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.132830",
+   "generated_by" : "Dist::Milla version v1.0.4, Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.133380",
    "license" : [
       "perl_5"
    ],
@@ -60,9 +60,10 @@
          "web" : "https://github.com/pgraemer/Mojolicious-Plugin-HttpBasicAuth"
       }
    },
-   "version" : "0.08",
+   "version" : "0.09",
    "x_contributors" : [
-      "Patrick Gr\u00e4mer <mail@graemer.org>"
+      "pgraemer <mail+bitbucket@graemer.org>",
+      "pgraemer <mail+github@graemer.org>"
    ]
 }
 
