@@ -162,7 +162,7 @@ Validation callback to verify user. This option is B<mandatory>.
       }
   });
 
-Callback vor invalid requests, default can be seen here. Return values are dispatched to L<Mojolicious::Controller/"respond_to">
+Callback for invalid requests, default can be seen here. Return values are dispatched to L<Mojolicious::Controller/"respond_to">
 
 =head1 HELPERS
 

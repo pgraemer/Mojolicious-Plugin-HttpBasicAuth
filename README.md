@@ -76,7 +76,7 @@ Validation callback to verify user. This option is __mandatory__.
         }
     });
 
-Callback vor invalid requests, default can be seen here. Return values are dispatched to ["respond_to" in Mojolicious::Controller](https://metacpan.org/pod/Mojolicious::Controller#respond_to)
+Callback for invalid requests, default can be seen here. Return values are dispatched to ["respond_to" in Mojolicious::Controller](https://metacpan.org/pod/Mojolicious::Controller#respond_to)
 
 # HELPERS
 
@@ -108,4 +108,4 @@ Register renderer and helper in [Mojolicious](https://metacpan.org/pod/Mojolicio
 
 # AUTHOR
 
-Patrick Grämer, <pgraemer@cpan.org>, [http://graemer.org](http://graemer.org).
+Patrick Grï¿½mer, <pgraemer@cpan.org>, [http://graemer.org](http://graemer.org).
