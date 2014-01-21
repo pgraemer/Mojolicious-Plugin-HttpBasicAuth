@@ -4,7 +4,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::ByteStream;
 use Mojo::Util qw{b64_encode b64_decode};
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 sub register {
     my ($plugin, $app, $user_defaults) = @_;
@@ -99,10 +99,10 @@ Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation fo
               my $loginname = shift;
               my $password  = shift;
               my $realm     = shift;
-              return 1 if($realm eq 'Springfield' && $loginname eq 'Homer' && $password eq 'Marge');
+              return 1 if($realm eq 'Evergreen Terrace' && $loginname eq 'Homer' && $password eq 'Marge');
               return 0;
           },
-          realm => 'Homers Home'
+          realm => 'Evergreen Terrace'
       }
   );
 
