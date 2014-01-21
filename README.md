@@ -12,11 +12,11 @@ Http-Basic-Authentication implementation for Mojolicious
                 my $loginname = shift;
                 my $password  = shift;
                 my $realm     = shift;
-                return 1 if($realm eq 'Springfield' && $loginname eq 'Homer' && $password eq 'Marge');
+                return 1 if($realm eq 'Evergreen Terrace' && $loginname eq 'Homer' && $password eq 'Marge');
 
                 return 0;
             },
-            realm => 'Homers Home'
+            realm => 'Evergreen Terrace'
         }
     );
 
