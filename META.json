@@ -61,7 +61,7 @@
          "web" : "https://github.com/pgraemer/Mojolicious-Plugin-HttpBasicAuth"
       }
    },
-   "version" : "0.10",
+   "version" : "0.11",
    "x_contributors" : [
       "Patrick Gr\u00e4mer <pgraemer@cpan.org>",
       "Markus Michel <mmichel@cpan.org>"
