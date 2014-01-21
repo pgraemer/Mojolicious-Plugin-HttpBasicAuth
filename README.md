@@ -11,7 +11,9 @@ Http-Basic-Authentication implementation for Mojolicious
                 my $c         = shift;
                 my $loginname = shift;
                 my $password  = shift;
-                return 1 if($loginname eq 'Homer' && $password eq 'Marge');
+                my $realm     = shift;
+                return 1 if($realm eq 'Springfield' && $loginname eq 'Homer' && $password eq 'Marge');
+
                 return 0;
             },
             realm => 'Homers Home'
@@ -57,7 +59,8 @@ HTTP-Realm, defaults to 'WWW'
               my $c          = shift;
               my $loginname  = shift;
               my $password   = shift;
-              return 1 if($loginname eq 'Homer' && $password eq 'Marge');
+              my $realm      = shift;
+              return 1 if($realm eq 'Springfield' && $loginname eq 'Homer' && $password eq 'Marge');
               return 0;
         }
     });
@@ -107,6 +110,7 @@ Register renderer and helper in [Mojolicious](https://metacpan.org/pod/Mojolicio
 
 [Mojolicious](https://metacpan.org/pod/Mojolicious), [Mojolicious::Guides](https://metacpan.org/pod/Mojolicious::Guides), [http://mojolicio.us](http://mojolicio.us).
 
-# AUTHOR
+# AUTHORS
 
 Patrick Grämer, <pgraemer@cpan.org>, [http://graemer.org](http://graemer.org).
+Markus Michel, <mmichel@cpan.org>, [http://markusmichel.org](http://markusmichel.org).

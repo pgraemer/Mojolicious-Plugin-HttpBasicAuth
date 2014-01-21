@@ -6,11 +6,15 @@ use Mojolicious::Lite;
 use Mojo::ByteStream 'b';
 use Test::Mojo;
 
+my $tested_realm;
 plugin 'http_basic_auth' => {
     validate => sub {
         my $c = shift;
         my $u = shift;
         my $p = shift;
+        my $r = shift;
+        $tested_realm = $r;
+
         return 1 if ($u eq 'foo' && $p eq 'bar');
         return 0;
       }
@@ -46,6 +50,8 @@ for my $uri (qw(/ /under-bridge)) {
     # auth passed
     my $url = $t->ua->server->url->userinfo('foo:bar')->path($uri);
     $t->get_ok($url)->status_is(200)->content_like(qr/Hello Mojo!/);
+    is($tested_realm, 'WWW', 'Testing sub gets correct Realm');
+    $tested_realm = undef;
 
     # password only
     $url = $t->ua->server->url->userinfo(':bar')->path($uri);

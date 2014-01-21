@@ -4,7 +4,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::ByteStream;
 use Mojo::Util qw{b64_encode b64_decode};
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 sub register {
     my ($plugin, $app, $user_defaults) = @_;
@@ -38,7 +38,7 @@ sub register {
             return $plugin->_unauthorized($controller, $options{realm}, $options{invalid}) unless ($auth);
 
             # Verification within callback
-            return 1 if $options{validate} and $options{validate}->($controller, split(/:/, $auth, 2));
+            return 1 if $options{validate} and $options{validate}->($controller, split(/:/, $auth, 2), $options{realm});
 
             # Not verified
             return $plugin->_unauthorized($controller, $options{realm}, $options{invalid});
@@ -98,7 +98,8 @@ Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation fo
               my $c         = shift;
               my $loginname = shift;
               my $password  = shift;
-              return 1 if($loginname eq 'Homer' && $password eq 'Marge');
+              my $realm     = shift;
+              return 1 if($realm eq 'Springfield' && $loginname eq 'Homer' && $password eq 'Marge');
               return 0;
           },
           realm => 'Homers Home'
@@ -142,7 +143,8 @@ HTTP-Realm, defaults to 'WWW'
             my $c          = shift;
             my $loginname  = shift;
             my $password   = shift;
-            return 1 if($loginname eq 'Homer' && $password eq 'Marge');
+            my $realm      = shift;
+            return 1 if($realm eq 'Springfield' && $loginname eq 'Homer' && $password eq 'Marge');
             return 0;
       }
   });
@@ -192,8 +194,9 @@ Register renderer and helper in L<Mojolicious> application.
 
 L<Mojolicious>, L<Mojolicious::Guides>, L<http://mojolicio.us>.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
 Patrick Grämer, E<lt>pgraemer@cpan.orgE<gt>, L<http://graemer.org>.
+Markus Michel, E<lt>mmichel@cpan.orgE<gt>, L<http://markusmichel.org>.
 
 =cut
