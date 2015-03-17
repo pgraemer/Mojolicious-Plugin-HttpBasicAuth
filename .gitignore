@@ -7,3 +7,4 @@ MYMETA.*
 /.prove
 .project
 .settings
+.proverc
