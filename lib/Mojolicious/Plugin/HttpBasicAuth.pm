@@ -70,18 +70,8 @@ sub _unauthorized {
 }
 
 1;
-__DATA__
 
-@@ auth/basic.html.ep
-<h1>Authorization Required</h1>
-<p>This server could not verify that you
-are authorized to access the document
-requested.  Either you supplied the wrong
-credentials (e.g., bad password), or your
-browser doesn't understand how to supply
-the credentials required.</p>
-
-__END__
+=pod
 
 =encoding utf8
 
@@ -112,7 +102,7 @@ Mojolicious::Plugin::HttpBasicAuth - Http-Basic-Authentication implementation fo
       return unless $self->basic_auth(\%options);
       $self->render();
   }
-  
+
   # or bridged
   my $foo = $r->bridge('/bridge')->to(cb => sub {
       my $self = shift;
@@ -194,9 +184,31 @@ Register renderer and helper in L<Mojolicious> application.
 
 L<Mojolicious>, L<Mojolicious::Guides>, L<http://mojolicio.us>.
 
-=head1 AUTHORS
+=head1 AUTHOR
 
-Patrick Grämer, E<lt>pgraemer@cpan.orgE<gt>, L<http://graemer.org>.
-Markus Michel, E<lt>mmichel@cpan.orgE<gt>, L<http://markusmichel.org>.
+Patrick Grämer E<lt>pgraemer@cpan.orgE<gt>
+, L<http://graemer.org>.
+
+=head1 COPYRIGHT
+
+Copyright 2015 Patrick Grämer
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
+
+__DATA__
+
+@@ auth/basic.html.ep
+<h1>Authorization Required</h1>
+<p>This server could not verify that you
+are authorized to access the document
+requested.  Either you supplied the wrong
+credentials (e.g., bad password), or your
+browser doesn't understand how to supply
+the credentials required.</p>
+
+__END__

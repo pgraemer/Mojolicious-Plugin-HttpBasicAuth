@@ -1,17 +1,16 @@
 {
    "abstract" : "Http-Basic-Authentication implementation for Mojolicious",
    "author" : [
-      "Patrick Gr\u00e4mer, <pgraemer@cpan.org>, L<http://graemer.org>.",
-      "Markus Michel, <mmichel@cpan.org>, L<http://markusmichel.org>."
+      "Patrick Grämer <pgraemer@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Milla version v1.0.4, Dist::Zilla version 5.012, CPAN::Meta::Converter version 2.133380",
+   "generated_by" : "Dist::Zilla version 5.032, Dist::Milla version v1.0.14, CPAN::Meta::Converter version 2.143240",
    "license" : [
       "perl_5"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
-      "version" : "2"
+      "version" : 2
    },
    "name" : "Mojolicious-Plugin-HttpBasicAuth",
    "no_index" : {
@@ -27,11 +26,12 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "Module::Build::Tiny" : "0.030"
+            "Module::Build::Tiny" : "0.039"
          }
       },
       "develop" : {
          "requires" : {
+            "Dist::Milla" : "v1.0.14",
             "Test::Pod" : "1.41"
          }
       },
@@ -63,8 +63,7 @@
    },
    "version" : "0.11",
    "x_contributors" : [
-      "Patrick Gr\u00e4mer <pgraemer@cpan.org>",
-      "Markus Michel <mmichel@cpan.org>"
+      "Markus Michel <mmichel@cpan.org>",
    ]
 }
 
