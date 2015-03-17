@@ -189,6 +189,11 @@ L<Mojolicious>, L<Mojolicious::Guides>, L<http://mojolicio.us>.
 Patrick Grämer E<lt>pgraemer@cpan.orgE<gt>
 , L<http://graemer.org>.
 
+=head1 CONTRIBUTOR
+
+Markus Michel E<lt>mmichel@cpan.orgE<gt>
+, L<http://markusmichel.org>.
+
 =head1 COPYRIGHT
 
 Copyright 2015 Patrick Grämer

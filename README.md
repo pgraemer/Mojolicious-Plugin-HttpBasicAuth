@@ -111,6 +111,11 @@ Register renderer and helper in [Mojolicious](https://metacpan.org/pod/Mojolicio
 Patrick Grämer <pgraemer@cpan.org>
 , [http://graemer.org](http://graemer.org).
 
+# CONTRIBUTOR
+
+Markus Michel <mmichel@cpan.org>
+, [http://markusmichel.org](http://markusmichel.org).
+
 # COPYRIGHT
 
 Copyright 2015 Patrick Grämer
