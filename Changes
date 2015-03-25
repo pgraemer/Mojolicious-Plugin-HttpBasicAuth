@@ -1,5 +1,8 @@
 Revision history for Mojolicious-Plugin-HttpBasicAuth
 
+0.12    2015-03-25        
+        fixed warning for delayed rendering
+
 0.11    2014-01-21
         POD fixed
 
