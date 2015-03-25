@@ -61,10 +61,14 @@ sub _auth_header {
 sub _unauthorized {
     my ($plugin, $controller, $realm, $callback) = @_;
 
+    $controller->res->code(401);
     $controller->res->headers->www_authenticate("Basic realm=\"$realm\"");
     $controller->respond_to($callback->($controller));
-    $controller->res->code(401);
-    $controller->rendered;
+
+    # Only render if not already rendered
+    if ($controller->tx) {
+      $controller->rendered;      
+    }
 
     return;
 }
