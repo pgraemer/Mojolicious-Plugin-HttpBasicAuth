@@ -4,7 +4,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::ByteStream;
 use Mojo::Util qw{b64_encode b64_decode};
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 sub register {
     my ($plugin, $app, $user_defaults) = @_;
@@ -67,7 +67,7 @@ sub _unauthorized {
 
     # Only render if not already rendered
     if ($controller->tx) {
-      $controller->rendered;      
+      $controller->rendered;
     }
 
     return;
