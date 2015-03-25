@@ -5,7 +5,6 @@ use Test::More;
 use Mojolicious::Lite;
 use Mojo::ByteStream 'b';
 use Test::Mojo;
-use Carp::Always;
 
 my $tested_realm;
 my $custom_setting;
@@ -26,32 +25,32 @@ plugin 'http_basic_auth' => {
 };
 
 get '/' => sub {
-    my $self = shift;
-    return unless $self->basic_auth($custom_setting);
-    $self->render(text => 'Hello Mojo!');
+    my $c = shift;
+    return unless $c->basic_auth($custom_setting);
+    $c->render(text => 'Hello Mojo!');
 };
 
 get '/delayed' => sub {
-    my $self = shift;
-    $self->render_later;
+    my $c = shift;
+    $c->render_later;
     Mojo::IOLoop->timer(0 => sub {
-        return unless $self->basic_auth($custom_setting);
-        $self->render(text => 'Hello Mojo!');
+        return unless $c->basic_auth($custom_setting);
+        $c->render(text => 'Hello Mojo!');
     });
 };
 
 under sub {
-    my $self = shift;
-    return unless $self->basic_auth($custom_setting);
+    my $c = shift;
+    return unless $c->basic_auth($custom_setting);
 };
 
 get '/under-bridge' => sub {
-    my $self = shift;
-    $self->render(text => 'Hello Mojo!');
+    my $c = shift;
+    $c->render(text => 'Hello Mojo!');
 };
 
 helper unauthorized => sub {
-    my $c = shift; 
+    my $c = shift;
     $c->res->code(401);
     $c->render(json => { error => 'Authorization Required' });
 };
