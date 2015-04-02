@@ -1,5 +1,7 @@
 Revision history for Mojolicious-Plugin-HttpBasicAuth
 
+{{NEXT}}
+
 0.12    2015-03-25        
         fixed warning for delayed rendering
 
